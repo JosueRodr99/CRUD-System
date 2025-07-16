@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Editar Producto</h1>
+        <a href="index.html" class="btn">Volver</a>
+    </header>
+    <main>
+        <form class="form-producto">
+            <label>Nombre
+                <input type="text" name="nombre" required value="Ejemplo">
+            </label>
+            <label>Precio
+                <input type="number" name="precio" required min="0" value="100">
+            </label>
+            <label>Precio original
+                <input type="number" name="precio_original" required min="0" value="150">
+            </label>
+            <label>Descripción
+                <textarea name="descripcion" required>Descripción de ejemplo</textarea>
+            </label>
+            <label>Imagen del producto
+                <input type="file" name="imagen" accept="image/*">
+            </label>
+            <button type="submit" class="btn">Guardar Cambios</button>
+        </form>
+    </main>
+</body>
+</html> 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - CRUD</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Productos</h1>
+        <a href="nuevo.html" class="btn">Agregar Producto</a>
+    </header>
+    <main>
+        <table class="productos">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Precio Original</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se listarán los productos -->
+                <tr>
+                    <td><img src="https://via.placeholder.com/60" alt="Producto" class="img-producto"></td>
+                    <td>Ejemplo</td>
+                    <td>$100</td>
+                    <td>$150</td>
+                    <td>Descripción de ejemplo</td>
+                    <td>
+                        <a href="editar.html" class="btn btn-editar">Editar</a>
+                        <a href="#" class="btn btn-eliminar">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

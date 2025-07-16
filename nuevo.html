@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Agregar Producto</h1>
+        <a href="index.html" class="btn">Volver</a>
+    </header>
+    <main>
+        <form class="form-producto">
+            <label>Nombre
+                <input type="text" name="nombre" required>
+            </label>
+            <label>Precio
+                <input type="number" name="precio" required min="0">
+            </label>
+            <label>Precio original
+                <input type="number" name="precio_original" required min="0">
+            </label>
+            <label>Descripción
+                <textarea name="descripcion" required></textarea>
+            </label>
+            <button type="submit" class="btn">Guardar</button>
+        </form>
+    </main>
+    <script type="module">
+        import { db, app } from './firebase-config.js';
+        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+        const form = document.querySelector('.form-producto');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const nombre = form.nombre.value;
+            const precio = parseFloat(form.precio.value);
+            const precio_original = parseFloat(form.precio_original.value);
+            const descripcion = form.descripcion.value;
+
+            try {
+                await addDoc(collection(db, 'products'), {
+                    nombre,
+                    precio,
+                    precio_original,
+                    descripcion
+                });
+                alert('Producto guardado exitosamente');
+                window.location.href = 'index.html';
+            } catch (error) {
+                alert('Error al guardar el producto: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html> 
